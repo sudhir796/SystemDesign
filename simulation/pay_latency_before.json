@@ -1,0 +1,6 @@
+{
+  "description": "Baseline /pay latency when PaymentGateway.charge was called INSIDE the open SQLite transaction",
+  "pay_p50_before_ms": 102.72,
+  "pay_p95_before_ms": 2366.73,
+  "pay_p99_before_ms": 5389.99
+}
