@@ -65,9 +65,27 @@ d:/System_Design/
 │   ├── test_payment.py             # Payment gateway and stock release tests
 │   ├── test_order_outbox.py        # Outbox worker and circuit breaker tests
 │   └── test_state_machine.py       # Order state machine validation tests
-├── AI_USAGE_NOTE.md                # AI transparency, generated code, and human review notes
+├── TEAM 4 - System Design.pdf  # Comprehensive architecture & system design document (11 visual diagrams)
+├── AI_USAGE_NOTE.md            # AI transparency, generated code, and human review notes
 └── README.md
 ```
+
+---
+
+## 2.1 System Design & Architecture Document
+
+The repository includes the complete system design package in [TEAM 4 - System Design.pdf](file:///d:/System_Design/TEAM%204%20-%20System%20Design.pdf), containing 11 formal architectural diagrams:
+1. **System Context Diagram** (Context boundary: Customer, SaleStorm Platform, External Gateways, Shipping & Notifications)
+2. **High-Level Design (HLD)** (Edge, API Gateway, Microservices, Shared Infrastructure, Observability)
+3. **Container Diagram (C4 Level 2)** (CDN/WAF, Admission/Waiting Room, Redis Cluster, PostgreSQL, Kafka Message Broker, Order DB)
+4. **Component Diagram (C4 Level 3)** (ReservationController, ReservationService, StockGate interface, RedisStockGate Lua atomic DECR, ExpiryWorker, Outbox EventPublisher)
+5. **Deployment Diagram** (Kubernetes Pods across Multi-AZ, Primary/Standby Postgres with Sync Replication, Kafka RF=3)
+6. **Entity Relationship (ER) Diagram** (Customer, Order, OrderItem, Reservation, Inventory, Payment, Outbox schema relationships)
+7. **Class Diagram** (CheckoutFacade, ReservationService, PaymentService, OrderService, Strategy interfaces)
+8. **Purchase / Inventory Reservation Sequence Diagram** (Admission queue, Redis Lua atomic decrement, conditional DB UPDATE fallback, idempotency handling)
+9. **Payment Sequence Diagram** (Idempotency check, external gateway call, outbox event emission, reconciliation worker)
+10. **Order Sequence and Recovery Diagram** (Kafka consumer, Order DB inbox deduplication, dead-letter queue, automated compensation/refunds)
+11. **Reservation State Diagram** (AVAILABLE -> RESERVED -> PAYMENT_PENDING -> CONFIRMED -> SOLD / EXPIRED / RELEASED)
 
 ---
 
