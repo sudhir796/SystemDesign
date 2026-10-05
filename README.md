@@ -66,15 +66,22 @@ d:/System_Design/
 │   ├── test_order_outbox.py        # Outbox worker and circuit breaker tests
 │   └── test_state_machine.py       # Order state machine validation tests
 ├── TEAM 4 - System Design.pdf  # Comprehensive architecture & system design document (11 visual diagrams)
+├── Requirements.pdf            # Hackathon problem statement and technical requirements
+├── SALESTORM - ER Diagram (Reference Layout).pdf # Reference ER schema layout
 ├── AI_USAGE_NOTE.md            # AI transparency, generated code, and human review notes
 └── README.md
 ```
 
 ---
 
-## 2.1 System Design & Architecture Document
+## 2.1 System Design & Architecture Documents
 
-The repository includes the complete system design package in [TEAM 4 - System Design.pdf](file:///d:/System_Design/TEAM%204%20-%20System%20Design.pdf), containing 11 formal architectural diagrams:
+The repository includes the complete system design package and specifications:
+- [TEAM 4 - System Design.pdf](file:///d:/System_Design/TEAM%204%20-%20System%20Design.pdf): Complete architecture package containing 11 formal architectural diagrams:
+- [Requirements.pdf](file:///d:/System_Design/Requirements.pdf): Hackathon problem statement, constraints, and engineering requirements.
+- [SALESTORM - ER Diagram (Reference Layout).pdf](file:///d:/System_Design/SALESTORM%20-%20ER%20Diagram%20(Reference%20Layout).pdf): Detailed reference entity-relationship layout for inventory, order, and payment models.
+
+### Architectural Diagrams Overview:
 1. **System Context Diagram** (Context boundary: Customer, SaleStorm Platform, External Gateways, Shipping & Notifications)
 2. **High-Level Design (HLD)** (Edge, API Gateway, Microservices, Shared Infrastructure, Observability)
 3. **Container Diagram (C4 Level 2)** (CDN/WAF, Admission/Waiting Room, Redis Cluster, PostgreSQL, Kafka Message Broker, Order DB)
